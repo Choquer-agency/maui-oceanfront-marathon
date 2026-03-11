@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
   return (
-    <section className="relative min-h-[45vh] flex items-end overflow-hidden pt-20 bg-cream">
+    <section className="relative min-h-[35vh] lg:min-h-[45vh] flex items-end overflow-hidden pt-20 bg-cream">
       {backgroundImage && (
         <>
           <div

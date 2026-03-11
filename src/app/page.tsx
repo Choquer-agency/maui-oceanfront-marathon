@@ -257,7 +257,7 @@ export default function HomePage() {
       </section>
 
       {/* Race Videos */}
-      <section className="py-20 bg-cream overflow-hidden">
+      <section className="py-12 lg:py-20 bg-cream overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -285,7 +285,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA — compact, blurry image bg + blue overlay, promo as eyebrow */}
-      <section className="py-12 px-6 lg:px-16 bg-cream">
+      <section className="py-6 lg:py-12 px-6 lg:px-16 bg-cream">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

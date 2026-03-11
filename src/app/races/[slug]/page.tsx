@@ -37,14 +37,14 @@ export default async function RacePage({ params }: { params: Promise<{ slug: str
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           {/* Quick Stats — large like homepage counters */}
           <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 -mt-20 relative z-10 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 -mt-12 md:-mt-20 relative z-10 mb-16 md:mb-20">
               {[
                 { label: "Distance", value: race.distance },
                 { label: "Start Time", value: race.startTime },
                 { label: "Start", value: race.startLocation, isLocation: true },
                 { label: "Finish", value: race.finishLocation, isLocation: true },
               ].map((stat) => (
-                <div key={stat.label} className="bg-white border border-ink/5 rounded-xl p-6 text-center">
+                <div key={stat.label} className="bg-white border border-ink/5 rounded-xl p-4 md:p-6 text-center">
                   <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-ink/40">
                     {stat.label}
                   </p>

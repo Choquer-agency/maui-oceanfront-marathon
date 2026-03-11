@@ -25,11 +25,11 @@ export function SponsorBar() {
       <p className="text-center text-[12px] font-bold uppercase tracking-[0.25em] text-ink/25 mb-8">
         Our Sponsors
       </p>
-      <div className="flex items-center justify-center flex-wrap gap-6 md:gap-8 px-8">
+      <div className="grid grid-cols-3 md:flex md:items-center md:justify-center md:flex-wrap gap-4 md:gap-8 px-8">
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.name}
-            className="relative h-14 w-36 flex-shrink-0 transition-transform duration-300 hover:scale-105"
+            className="relative h-12 md:h-14 md:w-36 flex-shrink-0 transition-transform duration-300 hover:scale-105"
             style={{ mixBlendMode: "darken" }}
           >
             <Image
@@ -46,7 +46,7 @@ export function SponsorBar() {
           href="https://choquer.agency"
           target="_blank"
           rel="noopener noreferrer"
-          className="relative h-14 w-36 flex-shrink-0 transition-transform duration-300 hover:scale-105"
+          className="relative h-12 md:h-14 md:w-36 flex-shrink-0 transition-transform duration-300 hover:scale-105 col-start-2 md:col-start-auto"
           style={{ mixBlendMode: "darken" }}
         >
           <Image

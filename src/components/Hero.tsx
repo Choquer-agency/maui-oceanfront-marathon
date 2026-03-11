@@ -124,7 +124,7 @@ function YouTubeBackground({
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none overflow-hidden [&_iframe]:absolute [&_iframe]:top-1/2 [&_iframe]:left-1/2 [&_iframe]:-translate-x-1/2 [&_iframe]:-translate-y-1/2 [&_iframe]:w-[300%] [&_iframe]:h-[300%] [&_iframe]:min-w-[100vw] [&_iframe]:min-h-[100vh]"
+      className="absolute inset-0 pointer-events-none overflow-hidden [&_iframe]:absolute [&_iframe]:top-1/2 [&_iframe]:left-1/2 [&_iframe]:-translate-x-1/2 [&_iframe]:-translate-y-1/2 [&_iframe]:w-[400%] [&_iframe]:h-[400%] [&_iframe]:min-w-[177vh] [&_iframe]:min-h-[100vh]"
     />
   );
 }
@@ -142,7 +142,7 @@ export function Hero({
 }: HeroProps) {
   return (
     <section
-      className="relative min-h-screen flex items-end overflow-hidden"
+      className="relative min-h-screen flex items-center lg:items-end overflow-hidden"
       {...(backgroundVideo ? { "data-hero-dark": "" } : {})}
     >
       {/* Background video */}
@@ -179,7 +179,7 @@ export function Hero({
       )}
 
       {/* Content — positioned at bottom */}
-      <div className="relative z-10 w-full pb-20 pt-40">
+      <div className="relative z-10 w-full py-20 lg:pb-20 lg:pt-40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {eyebrow && (
             <motion.p

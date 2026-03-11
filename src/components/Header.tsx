@@ -147,60 +147,66 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav — dark blue overlay */}
       {mobileOpen && (
-        <div className="lg:hidden mx-auto max-w-[1100px] mt-2 bg-white/95 backdrop-blur-xl shadow-xl border border-gray-100 rounded-2xl overflow-hidden animate-in slide-in-from-top-2 duration-200">
-          <div className="px-6 py-6 space-y-5">
-            {navigation.map((group) =>
-              group.href ? (
-                // Direct link in mobile
-                <a
-                  key={group.label}
-                  href={group.href}
-                  target={group.external ? "_blank" : undefined}
-                  rel={group.external ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-2 px-3 py-2.5 text-[14px] font-bold uppercase tracking-[0.15em] text-ink/70 hover:text-brand transition-colors rounded-lg"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {group.label}
-                  {group.external && (
-                    <svg viewBox="0 0 16 16" fill="none" className="h-3 w-3 opacity-40">
-                      <path d="M6 3h7v7M13 3L6 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  )}
-                </a>
-              ) : (
-                // Dropdown group in mobile
-                <div key={group.label}>
-                  <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-ink/30 mb-2">
+        <>
+          <div
+            className="fixed inset-0 bg-ink/70 backdrop-blur-sm z-[-1] lg:hidden"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="lg:hidden mx-auto max-w-[1100px] mt-2 bg-brand-dark/95 backdrop-blur-xl shadow-xl border border-brand-dark/50 rounded-2xl overflow-hidden animate-in slide-in-from-top-2 duration-200">
+            <div className="px-6 py-6 space-y-5">
+              {navigation.map((group) =>
+                group.href ? (
+                  // Direct link in mobile
+                  <a
+                    key={group.label}
+                    href={group.href}
+                    target={group.external ? "_blank" : undefined}
+                    rel={group.external ? "noopener noreferrer" : undefined}
+                    className="flex items-center gap-2 px-3 py-2.5 text-[14px] font-bold uppercase tracking-[0.15em] text-white/90 hover:text-white transition-colors rounded-lg"
+                    onClick={() => setMobileOpen(false)}
+                  >
                     {group.label}
-                  </p>
-                  <div className="grid grid-cols-2 gap-0.5">
-                    {group.items!.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="block px-3 py-2.5 text-[14px] text-ink/70 hover:text-brand transition-colors rounded-lg"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+                    {group.external && (
+                      <svg viewBox="0 0 16 16" fill="none" className="h-3 w-3 opacity-40">
+                        <path d="M6 3h7v7M13 3L6 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </a>
+                ) : (
+                  // Dropdown group in mobile
+                  <div key={group.label}>
+                    <p className="text-[13px] font-bold uppercase tracking-[0.15em] text-white/50 mb-2">
+                      {group.label}
+                    </p>
+                    <div className="grid grid-cols-2 gap-0.5">
+                      {group.items!.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block px-3 py-2.5 text-[14px] text-white/90 hover:text-white transition-colors rounded-lg"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )
-            )}
-            <Link
-              href="https://raceroster.com/events/2027/82264/maui-oceanfront-marathon"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center rounded-full bg-brand px-6 py-4 text-[14px] font-bold uppercase tracking-wider text-white"
-              onClick={() => setMobileOpen(false)}
-            >
-              Register Now
-            </Link>
+                )
+              )}
+              <Link
+                href="https://raceroster.com/events/2027/82264/maui-oceanfront-marathon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center rounded-full bg-brand px-6 py-4 text-[14px] font-bold uppercase tracking-wider text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                Register Now
+              </Link>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

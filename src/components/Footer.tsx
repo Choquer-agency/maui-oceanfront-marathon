@@ -153,14 +153,14 @@ export function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent mb-14" />
 
         {/* Links grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-8">
           {/* Brand column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="col-span-2 sm:col-span-3 lg:col-span-1"
+            className="col-span-1 sm:col-span-3 lg:col-span-1"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-full bg-brand/20 flex items-center justify-center">
